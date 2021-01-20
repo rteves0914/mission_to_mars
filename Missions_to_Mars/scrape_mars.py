@@ -33,7 +33,7 @@ def scrape():
     soup_image = bs(html_image, 'html.parser')
     results_image = browser.find_by_css('div[class=SearchResultCard]')
     results_image[0].click()
-    mars_image = browser.find_by_id('96342')['src']
+    mars_image = browser.find_by_css('img[class=BaseImage object-scale-down]')
     mars_image
 
     mars["featured_image"] = mars_image
