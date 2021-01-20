@@ -18,6 +18,7 @@ def index():
 def scraper():
     collection = mongo.db.mars_collection
     collection_data = scrape_mars.scrape()
+    print(collection_data)
     collection.update({}, collection_data, upsert=True)
     return redirect("/")
 

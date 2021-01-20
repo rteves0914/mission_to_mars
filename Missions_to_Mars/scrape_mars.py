@@ -6,7 +6,7 @@ import pandas as pd
 
 def init_browser():
     executable_path = {'executable_path': ChromeDriverManager().install()}
-    return Browser('chrome', **executable_path, headless=False)
+    return Browser('chrome', **executable_path, headless=True)
 
 def scrape():
     browser = init_browser()
@@ -18,12 +18,14 @@ def scrape():
     html_news = browser.html
     soup_news = bs(html_news, 'html.parser')
     results_news = soup_news.find_all('div', class_='content_title')
-    print(results_news[1].text)
+    mars_news = results_news[1].text
+    print(mars_news)
     paragraphs_news = soup_news.find_all('div', class_="article_teaser_body")
-    print(paragraphs_news[0].text)
+    mars_paragraph = paragraphs_news[0].text
+    print(mars_paragraph)
 
-    mars = {"news_title": results_news[1].text,
-            "news_description": paragraphs_news[0].text}
+    mars = {"news_title": mars_news,
+            "news_description": mars_paragraph}
 
 
     url_image = 'https://www.jpl.nasa.gov/images/?search=&category=Mars'
@@ -33,7 +35,7 @@ def scrape():
     soup_image = bs(html_image, 'html.parser')
     results_image = browser.find_by_css('div[class=SearchResultCard]')
     results_image[0].click()
-    mars_image = browser.find_by_css('img[class=BaseImage object-scale-down]')
+    mars_image = browser.find_by_tag('img[id]')['src']
     mars_image
 
     mars["featured_image"] = mars_image
