@@ -1,4 +1,4 @@
-# web-scraping-challenge
+Mission to Mars
 
 In this challenge, I scrape data from four different websites that have information about the planet Mars.
 
@@ -13,3 +13,5 @@ Lastly, I pull the images of four hemispheres of Mars on the website https://ast
 Once I have all the information scraped, I set up a Flask app that will display all of the information from MongoDB. I edit the web page using HTML code along with Bootstrap.
 
 The most useful tool I used here was the Splinter app that allowed me to do all of the scraping I needed to complete this assignment.
+
+![] 'screenshots/screensjot_1.png'
