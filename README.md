@@ -15,3 +15,5 @@ Once I have all the information scraped, I set up a Flask app that will display 
 The most useful tool I used here was the Splinter app that allowed me to do all of the scraping I needed to complete this assignment.
 
 ![](screenshots/Screenshot_1.png)
+![](screenshots/Screenshot_2.png)
+![](screenshots/Screenshot_3.png)
